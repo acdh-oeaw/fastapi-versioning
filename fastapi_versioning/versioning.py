@@ -47,9 +47,9 @@ def VersionedFastAPI(
     for version, route in version_routes:
         version_route_mapping[version].append(route)
 
-    unique_routes = {}
     versions = sorted(version_route_mapping.keys())
     for version in versions:
+        unique_routes = {}
         major, minor = version
         prefix = prefix_format.format(major=major, minor=minor)
         semver = version_format.format(major=major, minor=minor)
